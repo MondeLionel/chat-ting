@@ -404,4 +404,13 @@ p{
 	.chatHeader{
 		padding: 7px 5px;
 	}
+
+	.chat.image .message{
+		background-color: transparent;
+	}
+
+	.chat.image .message .sentImg{
+		border-radius: 5px;
+		max-height: 300px;
+	}
 }

@@ -58,7 +58,7 @@
 	},
 	{
 		message: "",
-		image:"../img/stop.gif",
+		image:"../img/chats/1.jpg",
 		link:null,
 		audio:null,
 		video:null,
@@ -164,6 +164,7 @@ function chat(index1){
 	message.textContent = chats[index1].message;
 
 	if(chats[index1].image != null){
+		chatEl1.classList.add("image");
 		let image = document.createElement("img");
 		image.classList.add("img-fluid","sentImg")
 		image.src = chats[index1].image
