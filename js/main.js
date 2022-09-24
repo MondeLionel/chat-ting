@@ -3,8 +3,25 @@
 	const body = document.querySelector("body")
 	let chatIndex = 0;
 	const defaultThumbnail = '../img/icons/icon_headphones.png';
+	const chatContainer = document.getElementById("chats");
+	const button1 = document.querySelector("#answer");
+	const loadedBtn = document.querySelector(".loadedBtn");
+	const bgTrack = document.querySelector("#bgTrack");
+	const pauseBtn = document.querySelector("#pause")
+	const disclaimerEl = document.querySelector(".disclaimer");
+	const messageSound = document.querySelector("#sound1");
+	const prequel = document.getElementById("prequel")
+	const intro = document.getElementById("intro")
+	const notification = document.querySelector(".notification")
+	
 
-// date vibes
+
+	let sound = new Howl({
+		src:'media/audio/message-pop.mp3',
+		sprite:{
+			pop:[0,1000]
+		}
+	})
 
 
 
@@ -41,7 +58,7 @@
 	},
 	{
 		message: "Day??",
-		image:"../img/nude.jpg",
+		image:"../img/stop.gif",
 		link:null,
 		audio:null,
 		video:null,
@@ -71,16 +88,7 @@
 	}
 ]
 
-const chatContainer = document.getElementById("chats");
-const button1 = document.querySelector("#answer");
-const loadedBtn = document.querySelector(".loadedBtn");
-const bgTrack = document.querySelector("#bgTrack");
-const pauseBtn = document.querySelector("#pause")
-const disclaimerEl = document.querySelector(".disclaimer");
-const messageSound = document.querySelector("#sound1");
-const prequel = document.getElementById("prequel")
-const intro = document.getElementById("intro")
-const notification = document.querySelector(".notification")
+
 
 loadedBtn.addEventListener("click", function(){
 	// psuedo-state management
@@ -99,6 +107,7 @@ loadedBtn.addEventListener("click", function(){
 		disclaimerEl.remove()
 		bgTrack.play();
 		body.classList.add("intro")
+		tl.play()
 	},3000)
 	// fade in intro screen
 })
@@ -120,6 +129,34 @@ pauseBtn.addEventListener("click", function(){
 button1.addEventListener('click', function(){
 	let index1 = chatIndex++
 	chat(index1)
+	setTimeout(()=>{
+		sound.play('pop')
+	},900)
+	
+})
+
+notification.addEventListener("click", function(){
+	sound.play('pop')
+	anime({
+		targets:notification,
+		translateY:'-100%',
+		opacity:[1,0],
+		duration:300,
+		easing: 'cubicBezier(1.000, -0.380, 0.810, 0.275)',
+		complete:function(){
+			intro.style = "display:none;"
+			body.classList.remove("screen");
+			body.classList.add("chatState");
+
+		}
+	})
+
+
+	
+})
+
+notification.addEventListener("",(e)=>{
+
 })
 
 function chat(index1){
@@ -191,7 +228,10 @@ function chat(index1){
 	}
 
 	chatEl1.appendChild(message);
-	chatContainer.appendChild(chatEl1)
+	setTimeout(()=>{
+		chatContainer.appendChild(chatEl1)
+	},1000)
+	
 }
 
 
@@ -201,7 +241,7 @@ let head3 = document.querySelector(".heading3")
 
 var tl = anime.timeline({
   easing:'linear',
-  duration:3000
+  duration:1000
 });
 
 tl
@@ -240,9 +280,16 @@ tl.finished.then(function(){
 	body.classList.remove("animating")
 	// body.classList.add("chatState")
 	body.classList.add("screen")
+		body.style = `background-image:url(img/ezgif.com-gif-maker.jpg);
+	background-size:cover;
+	background-repeat:no-repeat;
+	backdrop-filter: blur(2px);
+background-blend-mode: multiply;`
 	dramatl.play();
 
 })
+
+tl.pause();
 
 
 const dramatl = anime.timeline({
@@ -264,11 +311,13 @@ dramatl.add({
 	duration:100,
 	begin:function(){
 		console.log("began")
-		messageSound.play()
+		sound.play('pop')
 	}
 })
 
 dramatl.finished.then(()=>{
+
+
 	console.log("intro finished")
 })
 

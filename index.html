@@ -14,7 +14,7 @@
 		<div class="wrapper container">
 			<p class="audioWarning"></p>
 			<h3>This work is completely fictional and only for entertainment purposes. It is not intended as advice and any relevance to real people and places is purely coincedental.</h3>
-			<p>While we depict realistic scenarios, please do not try this at home.</p>
+<!-- 			<p>While we depict realistic scenarios, please do not try this at home.</p> -->
 			<a href="javascript:void(0)" class="btn btn-primary loadedBtn">I Understand</a>
 		</div>
 	</div>
@@ -77,7 +77,10 @@
 			
 		</section>
 		<div class="btns">	
-			<a href="#" class="btn btn-light" id="answer">Answer her</a>
+			<a href="#" class="btn btn-light" id="answer">
+				<img src="img/icons/send.png" class="img-fluid icon">
+				<p>SEND</p>
+			</a>
 		</div>
 		
 
@@ -88,11 +91,12 @@
 	<div class="audioControls">
 		<a href="javascript:void(0)" class="btn btn-light" id="pause">Pause audio</a>
 	</div>
-	<audio src="media/playlist/vibes.mp3" preload="none" id="bgTrack"></audio>
+	<audio src="media/playlist/vibes.mp3" preload="none" id="bgTrack" muted></audio>
 	<audio src="media/audio/message-pop.mp3" preload="none" id="sound1"></audio>
 
 
 	<script src="vendor/js/anime.min.js"></script>
+	<script src="vendor/js/howler.min.js"></script>
 	<script src="js/main.js"></script>
 
 </body>
