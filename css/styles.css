@@ -1,0 +1,288 @@
+*{
+
+
+
+}
+
+
+body{
+	font-family: 'Roboto' sans-serif;
+	background-color: rgba(16, 15, 15, 0.93);
+	height: 100vh;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+}
+
+main{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	opacity: 1;
+	visibility: visible;
+}
+
+.loading main,
+.animating main{
+	opacity: 0;
+	visibility: hidden;
+}
+
+p{
+	margin: 0;
+}
+
+.disclaimer{
+	color: #fff;
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	padding: 15% 1em;
+	min-height: 60vh;
+}
+
+.disclaimer .wrapper{
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex-shrink: 1;
+
+}
+
+.disclaimer .wrapper a{
+	max-width: 200px;
+	margin: 0 auto;
+}
+
+.intro main{
+	visibility: visible;
+	opacity: 1;
+}
+
+
+.intro #intro{
+	visibility: hidden;
+	opacity: 0;
+}
+
+.screen #intro{
+	visibility: visible;
+	opacity: 1;
+	color: #eee;
+	min-width: 400px;
+}
+
+
+
+#intro .time{
+	font-size: 4vw;
+	text-align: center;
+	margin-bottom: 2em;
+}
+
+#intro .notification{
+	display: flex;
+	background-color: rgba(255,255,255,0.8);
+	padding: 10px;
+	color: #000;
+	font-size: 0.8rem;
+	border-radius: 5px;
+}
+
+#prequel{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100%;
+}
+
+#prequel .introText{
+	position: absolute;
+	color: #fff;
+}
+
+
+
+
+
+
+
+.heading3{
+
+}
+.noise{
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	background-image: url('../img/noise.gif');
+	opacity: 0.09;
+}
+
+.loading .noise{
+	z-index: -1;
+}
+
+
+.chatContainer{
+	background-color: #f9f9f985;
+	border: 1px solid #eee;
+	max-width: 450px;
+	width: 100%;
+	/*padding: 0 1em;*/
+	position: relative;
+	height: 80vh;
+	overflow: hidden;
+	border-radius: 30px;
+	backdrop-filter: blur(20px);
+	visibility: hidden;
+	position: fixed;
+}
+.chatHeader{
+	z-index: 2;
+	position: absolute;
+	background-color: #f9f9f985;
+	width: 100%;
+	display: flex;
+	padding: 1em;
+	backdrop-filter: blur(10px);
+}
+
+.audioControls{
+	position: fixed;
+	bottom: 0;
+	visibility: hidden;
+	padding: 1em;
+}
+
+.intro .audioControls{
+	visibility: visible;
+}
+
+.profilepic{
+	width: 50px;
+	height: 50px;
+	object-fit: cover;
+	border-radius: 100px;
+	margin-right: 10px;
+}
+
+.profile{
+
+}
+
+.name{
+	font-weight: 600;
+}
+
+.status{
+	font-size: 0.8rem;
+	font-weight: 100;
+}
+
+#chats{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding: 1em;
+	/*height: 100%;*/
+}
+
+.message{
+	max-width: 78%;
+	padding: 10px;
+	background-color: #272d2c;
+	border-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-left-radius: 0;
+	font-size: 0.9rem;
+}
+
+.chat-2 .message{
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 10px;
+	margin-left: auto;
+	background-color: #004daa;
+}
+
+.chat{
+	display: flex;
+	margin-bottom: 1em;
+	color: #fff;
+}
+
+
+
+.chat-1{
+	
+}
+
+.chat-2{
+
+}
+
+.sentImg{
+	margin-top: 10px;
+}
+
+.link{
+	color: inherit; 
+}
+
+.chat.audio{
+
+}
+
+.chat.audio .message{
+	width: 100%;
+	height: 4em;
+}
+
+.link .linkMeta{
+	color: #fff;
+	background-color: rgba(0,0,0,0.3);
+	border-radius: 2px;
+	overflow: hidden;
+	padding: 1em;
+	text-decoration: none;
+}
+
+.link .linkMeta img{
+	width: 1em;
+	height: 100%;
+	object-fit: cover;
+}
+
+.link .linkMeta p{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-left: 1em;
+}
+
+.link .linkMeta p span{
+	display: block;
+}
+
+.link .linkMeta .host{
+	color: #eee;
+}
+
+.btns{
+	position: absolute;
+	bottom: 1em;
+	z-index: 1;
+	visibility: hidden;
+}
+
+.chatState .btns{
+	visibility: visible;
+}
+

@@ -1,0 +1,121 @@
+.product--page .bat{
+  
+  transform: rotate(90deg);
+  top: 8px;
+  right: 134px;
+  left: unset;
+  width: 22px;
+  height: 44px;
+  border: 2px solid #fff;
+  border-radius: 5px 5px 0px 0px;
+  /*! overflow: hidden; */
+}
+
+.product--page .bat::before{
+  
+  top: -10px;
+  left: 2px;
+  width: 14px;
+  border: 2px solid #fff;
+  z-index: 1;
+}
+
+.bat, .bat .fill, .bat .bars {
+  position: absolute;
+  border: 8px solid #fff6f6;
+  top: 50%;
+  left: 50%;
+  width: 160px;
+  height: 300px;
+  border-radius: 20px;
+  transform: translateX(-50%);
+}
+.bat:before, .bat .fill:before, .bat .bars:before {
+  content: "";
+  height: 5px;
+  width: 30px;
+  border: 8px solid #fffbfb;
+  position: absolute;
+  left: calc(50% - 22px);
+  top: -36px;
+  border-radius: 30% 30% 0 0;
+}
+.bat .bars {
+  z-index: 0;
+  height: 0;
+  border: 3px solid white;
+  border-radius: 0;
+  width: 155px;
+}
+.bat .bars:before {
+  content: none;
+}
+/*.bat #bar0 {
+ margin-top: 120px; 
+  display: none;
+}
+.bat #bar1 {
+  margin-top: 78px;
+}
+.bat #bar2 {
+  margin-top: 20px;
+}
+.bat #bar3 {
+  margin-top: -35px;
+}
+.bat #bar4 {
+  margin-top: -90px;
+}
+.bat #bar5 {
+  margin-top: -130px;
+  display: none;
+}*/
+.bat .fill {
+  border: none;
+  height: 14px;
+  margin-top: 6px;
+  border-radius: 0;
+  background-color: red;
+  z-index: -4;
+  animation: blink 1s linear infinite;
+  animation-delay: 0.5s;
+  width: 100%;
+}
+.bat .fill:before {
+  content: none;
+}
+
+/* @keyframes fill {
+  25% {
+    background-color: yellow;
+  }
+  49% {
+    border-radius: 0 0 10px 10px;
+  }
+  50% {
+    border-radius: 10px;
+    height: 300px;
+    margin-top: -150px;
+    background-color: lightgreen;
+  }
+  100% {
+    border-radius: 10px;
+    height: 300px;
+    margin-top: -150px;
+    background-color: lightgreen;
+  }
+} */
+
+@keyframes blink{
+  0%{
+    opacity:0;
+/*     visibility: hidden; */
+/*     display: none; */
+    
+  }
+  100%{
+    opacity: 1;
+/*     visibility: visible; */
+/*     display:block; */
+  }
+}
