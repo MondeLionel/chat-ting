@@ -34,7 +34,7 @@
 		audio:null,
 		video:null,
 		thumbnail:null,
-		messageID: "chat-1"
+		messageID: "chat-2"
 	},
 	{
 		message: "whats up.",
@@ -47,7 +47,7 @@
 
 	},
 	{
-		message: "Good beans, send nudes",
+		message: "Good. I'm good. Can we talk?",
 		image:null,
 		link:null,
 		audio:null,
@@ -57,7 +57,7 @@
 
 	},
 	{
-		message: "Day??",
+		message: "",
 		image:"../img/stop.gif",
 		link:null,
 		audio:null,
@@ -67,9 +67,9 @@
 
 	},
 	{
-		message: "All good. Nice body. Shit is getting hectic",
+		message: "I'm serious. Been wanting to talk for a while now",
 		image:null,
-		link:"https://www.maketecheasier.com/trello-self-hosted-alternative-wekan/",
+		link:null,
 		audio:null,
 		video:null,
 		thumbnail:null,
@@ -77,15 +77,16 @@
 
 	},
 	{
-		message: "",
+		message: "You keep avoiding me",
 		image:null,
 		link:null,
-		audio:"../media/audio/1.aac",
+		audio:null,
 		video:null,
 		thumbnail:null,
-		messageID: "chat-2"
+		messageID: "chat-1"
 
-	}
+	},
+
 ]
 
 
@@ -131,7 +132,7 @@ button1.addEventListener('click', function(){
 	chat(index1)
 	setTimeout(()=>{
 		sound.play('pop')
-	},900)
+	},490)
 	
 })
 
@@ -153,10 +154,6 @@ notification.addEventListener("click", function(){
 
 
 	
-})
-
-notification.addEventListener("",(e)=>{
-
 })
 
 function chat(index1){
@@ -230,7 +227,7 @@ function chat(index1){
 	chatEl1.appendChild(message);
 	setTimeout(()=>{
 		chatContainer.appendChild(chatEl1)
-	},1000)
+	},500)
 	
 }
 
@@ -248,14 +245,6 @@ tl
 .add({
   targets: prequel,
   opacity:[0,1]
-})
-.add({
-  targets:head1,
-  opacity:[0,1]
-})
-.add({
-  targets:head1,
-  opacity:[1,0]
 })
 .add({
   targets:head2,

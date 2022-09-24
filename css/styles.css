@@ -41,7 +41,10 @@ p{
 }
 
 #answer{
-
+	width: 150px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .wrapper p{
@@ -74,18 +77,27 @@ p{
 	margin: 0 auto;
 }
 
+.disclaimer .audioWarning, .introText span{
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	line-height: 1;
+	letter-spacing: 2px;
+}
 .intro main{
 	visibility: visible;
 	opacity: 1;
 }
 
-
+#intro{
+	display: none;
+}
 .intro #intro{
 	visibility: hidden;
 	opacity: 0;
 }
 
 .screen #intro{
+	display: block;
 	visibility: visible;
 	opacity: 1;
 	color: #eee;
@@ -121,10 +133,14 @@ p{
 #prequel .introText{
 	position: absolute;
 	color: #fff;
+	text-align: center;
 }
 
 
-
+.introText span{
+	font-size: 0.8rem;
+	display: block;
+}
 
 
 
@@ -158,6 +174,7 @@ p{
 	backdrop-filter: blur(20px);
 	visibility: hidden;
 	position: fixed;
+
 }
 .chatHeader{
 	z-index: 2;
@@ -207,9 +224,11 @@ p{
 	top: 0;
 	left: 0;
 	right: -17px;
-	width: 100%;
+	/*width: 100%;*/
 	padding: 1em;
-	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
 	overflow-y: scroll;
 }
 
@@ -362,5 +381,27 @@ p{
 
 	.chat.audio .message{
 		max-width: 100%;
+	}
+	.message{
+		font-size: 18px;
+	}
+
+	#intro .time{
+		font-size: 3em;
+		font-weight: 100;
+		margin-top: 2em;
+	}
+
+	#intro .notification{
+		max-width: 300px;
+		margin: 0 auto;
+	}
+
+	.screen #intro{
+		min-width: auto;
+		width: 100%;
+	}
+	.chatHeader{
+		padding: 7px 5px;
 	}
 }
