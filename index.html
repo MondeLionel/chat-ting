@@ -7,23 +7,48 @@
 
 	<link rel="stylesheet" href="vendor/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/styles.css">
+	<style type="text/css">
+		.loaders{
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
+		background-color: #000;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 10;
+		}
+
+		.loaders p{
+			color: #eee;
+			animation: loading 1s linear infinite alternate;
+		}
+
+	@keyframes loading {
+		0%{
+			opacity: 0;
+		}
+		100%{
+			opacity: 1;
+		}
+}
+
+	</style>
 </head>
 <body class="loading">
-	<div class="loaders"></div>
+	<div class="loaders">
+		<p class="counter">Loading</p>
+	</div>
 	<div class="disclaimer">
 		<div class="wrapper container">
 			<p class="audioWarning">This site has sound. Use earphones if possible</p>
 			<h3>This work is completely fictional and only for entertainment purposes. It is not intended as advice and any relevance to real people and places is purely coincedental.</h3>
-<!-- 			<p>While we depict realistic scenarios, please do not try this at home.</p> -->
 			<a href="javascript:void(0)" class="btn btn-primary loadedBtn">I Understand</a>
 		</div>
 	</div>
 	<div class="noise"></div>
-
-	
 	<main>
 		<section id="prequel">
-
 			<div class="heading2 introText">
 				<h1><span>Created by</span>AMAKHALA FILIM</h1>
 			</div>
@@ -56,19 +81,14 @@
 					</div>
 				</div>
 				
-			</div>
-			<!-- <div class="chatFooter"></div> -->
-			
+			</div>			
 		</section>
 		<div class="btns">	
 			<a href="#" class="btn btn-light" id="answer">
 				<img src="img/icons/send.png" class="img-fluid icon">
 				<p>SEND</p>
 			</a>
-		</div>
-		
-
-			
+		</div>		
 	</main>
 	<footer></footer>
 
