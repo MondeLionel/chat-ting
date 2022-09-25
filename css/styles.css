@@ -74,7 +74,7 @@ p{
 
 .disclaimer .wrapper a{
 	max-width: 200px;
-	margin: 0 auto;
+	margin: 2em auto;
 }
 
 .disclaimer .audioWarning, .introText span{
@@ -234,6 +234,7 @@ p{
 
 .message{
 	max-width: 78%;
+	min-width: 80px;
 	padding: 10px;
 	background-color: #272d2c;
 	border-radius: 10px;
@@ -249,6 +250,14 @@ p{
 	border-bottom-left-radius: 10px;
 	margin-left: auto;
 	background-color: #004daa;
+}
+
+.chat.image .message{
+	background-color: transparent;
+}
+
+.chat.image .message .sentImg{
+	border-radius: 10px;
 }
 
 .chat{

@@ -1,5 +1,7 @@
 (function(window){
 
+
+
 	const body = document.querySelector("body")
 	let chatIndex = 0;
 	const defaultThumbnail = '../img/icons/icon_headphones.png';
@@ -10,21 +12,19 @@
 	const pauseBtn = document.querySelector("#pause")
 	const disclaimerEl = document.querySelector(".disclaimer");
 	const messageSound = document.querySelector("#sound1");
-	const prequel = document.getElementById("prequel")
-	const intro = document.getElementById("intro")
-	const notification = document.querySelector(".notification")
-	
+	const prequel = document.getElementById("prequel");
+	const intro = document.getElementById("intro");
+	const notification = document.querySelector(".notification");
+	const loadEl = document.querySelector(".loaders");
 
 
 	let sound = new Howl({
 		src:'media/audio/message-pop.mp3',
+		volume:0.05,
 		sprite:{
 			pop:[0,1000]
 		}
 	})
-
-
-
 
 	let chats = [
 	{
@@ -89,7 +89,17 @@
 
 ]
 
-
+window.addEventListener("load", function(e){
+		// remove loader
+		anime({
+			targets:loadEl,
+			opacity:[1,0],
+			duration:1000,
+			complete:function(){
+				loadEl.remove();
+			}
+		})
+	})
 
 loadedBtn.addEventListener("click", function(){
 	// psuedo-state management
@@ -101,7 +111,8 @@ loadedBtn.addEventListener("click", function(){
 	anime({
 		targets: disclaimerEl,
 		duration:2000,
-		opacity: [1,0]
+		opacity: [1,0],
+
 	})
 
 	setTimeout(()=>{
@@ -239,7 +250,7 @@ let head3 = document.querySelector(".heading3")
 
 var tl = anime.timeline({
   easing:'linear',
-  duration:1000
+  duration:2000
 });
 
 tl
