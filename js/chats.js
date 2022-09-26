@@ -119,7 +119,7 @@
 
 	},
 	{
-		message: "Sure. You good tho? is something going on?",
+		message: "Sure. You good tho?",
 		image:null,
 		link:null,
 		audio:null,
