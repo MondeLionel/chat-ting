@@ -82,7 +82,7 @@ button1.addEventListener('click', function(){
 	chat(index1)
 	setTimeout(()=>{
 		sound.play('pop')
-	},490)
+	},190)
 	
 })
 
@@ -92,7 +92,7 @@ notification.addEventListener("click", function(){
 		targets:notification,
 		translateY:'-100%',
 		opacity:[1,0],
-		duration:300,
+		duration:100,
 		easing: 'cubicBezier(1.000, -0.380, 0.810, 0.275)',
 		complete:function(){
 			intro.style = "display:none;"
@@ -189,7 +189,7 @@ function chat(index1){
 	chatEl1.appendChild(message);
 	setTimeout(()=>{
 		chatContainer.appendChild(chatEl1)
-	},500)
+	},200)
 	
 }
 

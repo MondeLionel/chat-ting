@@ -259,7 +259,7 @@
 
 	},
 	{
-		message: "What? Come get me now. Im freaking out.",
+		message: "I will explain when you get la.",
 		image:null,
 		link:null,
 		audio:null,
