@@ -1,4 +1,4 @@
-(function(window){
+import { chats } from './chats.js'
 
 
 
@@ -26,68 +26,7 @@
 		}
 	})
 
-	let chats = [
-	{
-		message: "Sho Babe",
-		image:null,
-		link:null,
-		audio:null,
-		video:null,
-		thumbnail:null,
-		messageID: "chat-2"
-	},
-	{
-		message: "whats up.",
-		image:null,
-		link:null,
-		audio:null,
-		video:null,
-		thumbnail:null,
-		messageID: "chat-2"
 
-	},
-	{
-		message: "Good. I'm good. Can we talk?",
-		image:null,
-		link:null,
-		audio:null,
-		video:null,
-		thumbnail:null,
-		messageID: "chat-1"
-
-	},
-	{
-		message: "",
-		image:"../img/chats/1.jpg",
-		link:null,
-		audio:null,
-		video:null,
-		thumbnail:null,
-		messageID: "chat-2"
-
-	},
-	{
-		message: "I'm serious. Been wanting to talk for a while now",
-		image:null,
-		link:null,
-		audio:null,
-		video:null,
-		thumbnail:null,
-		messageID: "chat-1"
-
-	},
-	{
-		message: "You keep avoiding me",
-		image:null,
-		link:null,
-		audio:null,
-		video:null,
-		thumbnail:null,
-		messageID: "chat-1"
-
-	},
-
-]
 
 window.addEventListener("load", function(e){
 		// remove loader
@@ -217,6 +156,17 @@ function chat(index1){
 		message.appendChild(link);
 	}
 
+	if(chats[index1].messageID === "spacer"){
+		body.classList.add("dayTransition")
+		// animate my nigga
+		anime({
+			targets:document.querySelector(".days"),
+			opacity:[0,1],
+			duration:4000
+		})
+
+	}
+
 	if(chats[index1].audio != null){
 		chatEl1.classList.add("audio");
 		let audioElementWrapper = document.createElement("div");
@@ -324,5 +274,3 @@ dramatl.finished.then(()=>{
 
 dramatl.pause();
 
-
-})(window)
