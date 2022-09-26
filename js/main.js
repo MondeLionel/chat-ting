@@ -26,6 +26,10 @@ import { chats } from './chats.js'
 		}
 	})
 
+	let bg_track = new Howl({
+		src:'https://link.storjshare.io/s/jva7x4ubji7hayaas7fcoivun7ia/sounds/See%20Dee%20-%20Come%20Closer.mp3?wrap=0',
+		volume:0.09
+	})
 
 
 window.addEventListener("load", function(e){
@@ -45,7 +49,7 @@ loadedBtn.addEventListener("click", function(){
 	body.classList.remove("loading");
 	body.classList.add("animating")
 	// start music
-	bgTrack.volume = 0.05;
+	bg_track.play();
 	// fade out
 	anime({
 		targets: disclaimerEl,
@@ -56,7 +60,7 @@ loadedBtn.addEventListener("click", function(){
 
 	setTimeout(()=>{
 		disclaimerEl.remove()
-		bgTrack.play();
+		
 		body.classList.add("intro")
 		tl.play()
 	},3000)
@@ -65,14 +69,8 @@ loadedBtn.addEventListener("click", function(){
 
 
 pauseBtn.addEventListener("click", function(){
-
-	console.log(bgTrack)
-	if(bgTrack.playing = false){
-		bgTrack.play()
-		return
-	}
-
-	bgTrack.pause();
+	bg_track.pause()
+	body.classList.add("no-audio")
 	
 })
 

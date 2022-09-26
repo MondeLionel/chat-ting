@@ -188,6 +188,30 @@ p{
 	backdrop-filter: blur(10px);
 }
 
+.no-audio .audioControls{
+
+}
+
+.audioControls .play{
+	display: block;
+}
+
+.audioControls .pause{
+	display: none;
+}
+
+.no-audio .audioControls .play{
+	display: none;
+}
+
+.no-audio .audioControls .pause{
+	display: block;
+}
+.chatState .audioControls{
+	visibility: visible;
+}
+
+
 .audioControls{
 	position: fixed;
 	bottom: 0;
@@ -414,6 +438,7 @@ p{
 
 	#chats{
 		overflow-x: hidden;
+		right: 0;
 	}
 
 	#answer{
@@ -466,5 +491,15 @@ p{
 	.chat.image .message .sentImg{
 		border-radius: 5px;
 		max-height: 300px;
+	}
+	.days{
+		padding: 1em;
+		text-align: center;
+	}
+
+	.audioControls{
+		visibility: hidden;
+		top: 0;
+		right: 0;
 	}
 }
